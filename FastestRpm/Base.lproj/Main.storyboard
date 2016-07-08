@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speedoMeter.png" translatesAutoresizingMaskIntoConstraints="NO" id="tql-xK-asx">
+                                <rect key="frame" x="11" y="128" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="MuR-kP-A5n"/>
+                                    <constraint firstAttribute="height" constant="300" id="Oo1-op-DAs"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="needle.png" translatesAutoresizingMaskIntoConstraints="NO" id="A7X-y7-1bl">
+                                <rect key="frame" x="50" y="184" width="220" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Zfg-HB-pBl"/>
+                                    <constraint firstAttribute="width" constant="220" id="dhf-o6-rHn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed: 100Km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5t-XW-b53">
+                                <rect key="frame" x="77" y="44" width="167" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="5W8-pE-hFk"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="167" id="TE8-kS-v17"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="A7X-y7-1bl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5CE-M7-1Rd"/>
+                            <constraint firstItem="tql-xK-asx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="5sW-re-tqR"/>
+                            <constraint firstItem="A7X-y7-1bl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="68X-uT-9uX"/>
+                            <constraint firstItem="v5t-XW-b53" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DhB-tg-YQm"/>
+                            <constraint firstItem="tql-xK-asx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-6" id="QVJ-Pp-SHO"/>
+                            <constraint firstItem="tql-xK-asx" firstAttribute="top" secondItem="v5t-XW-b53" secondAttribute="bottom" constant="29" id="RJC-En-7DJ"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="yPh-N1-M8q" appends="YES" id="Fee-bU-JgW"/>
+                        </connections>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="needleImage" destination="A7X-y7-1bl" id="rNg-Ea-V5v"/>
+                        <outlet property="speedLabel" destination="v5t-XW-b53" id="0dI-CK-Ogx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="yPh-N1-M8q">
+                    <connections>
+                        <action selector="panGesture:" destination="BYZ-38-t0r" id="0Y4-7k-7Vd"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="245" y="300"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="needle.png" width="400" height="400"/>
+        <image name="speedoMeter.png" width="300" height="300"/>
+    </resources>
+</document>
